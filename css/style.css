@@ -1,0 +1,221 @@
+/* 박스 사이징 보더박스 전체 설정*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto; /*body는 기본적으로 가운데로*/
+  color: #1e1f49;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+a {
+  all: unset;
+} /*a 태그에 걸린 자질구리한 설정 리셋 
+--> 가상 클래스는 언셋되지 않으므로 설정필요*/
+
+a:hover {
+  text-decoration: none;
+  color: #1e1f49;
+}
+a:active {
+  text-decoration: none;
+  color: #1e1f49;
+}
+a:visited {
+  text-decoration: none;
+  color: #1e1f49;
+}
+
+a:link {
+  text-decoration: none;
+  color: #1e1f49;
+} /*a 태그에 링크가 걸려있을 경우의 설정 */
+
+.inner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; /*내부 요소 가운데로*/
+  padding: 0 2rem;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0; /*왼쪽 최상단에 고정*/
+  z-index: 1000; /*항상 나오도록 레이어상 최상단 고정*/
+}
+
+.head-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-container .head-item-left {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.head-container .head-item-left a:hover {
+  color: #5a61b5;
+  cursor: pointer;
+}
+
+.head-item-right {
+  display: flex;
+  align-items: center;
+}
+
+.head-item-right .head-item-right-list {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.head-item-right .head-item-right-grade {
+  font-weight: 700;
+}
+
+section {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative; /*섹션의 기본값*/
+}
+
+.main-image {
+  height: 400px;
+  background-image: url("/img/wemake.jpg");
+  background-position: center;
+  z-index: 1;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 400px;
+  background-color: #1e1f49;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+}
+
+.main-image-title-container {
+  padding-top: 100px;
+}
+
+.main-image-title-title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.main-image-title-description {
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.5rem;
+}
+
+.winner-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  background-color: #ffffff;
+  padding: 0.1rem;
+  margin: 0.7rem;
+  width: 200px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transition-property: transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.winner:hover {
+  transform: translateY(-10px);
+}
+
+.winner-logo img {
+  width: 20px;
+  height: 25px;
+  margin: 2px;
+}
+
+.winner-content {
+  margin: 10px 0px;
+}
+
+.winner-content-number {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.winner-content-year {
+  font-size: 2px;
+  opacity: 0.7;
+}
+
+.team-container {
+  width: 100%;
+}
+
+.team-introduce-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.team-intro-description {
+  display: flex;
+}
+
+.team-intro-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.team-intro-main {
+  vertical-align: bottom;
+}
+
+.team-player-list {
+  display: flex;
+}
+
+.team-player-img img {
+  width: 50px;
+  height: 50px;
+}
+
+.team-player-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1200px) {
+  .inner {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .winner-container {
+    display: none;
+  }
+}
