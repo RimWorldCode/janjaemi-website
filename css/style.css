@@ -37,6 +37,7 @@ a:link {
   height: 100%;
   margin: 0 auto; /*내부 요소 가운데로*/
   padding: 0 2rem;
+  overflow: hidden; /*이너 너비 외로 넘치는 부분은 히든*/
 }
 
 header {
@@ -174,38 +175,162 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
-  font-weight: 500;
   margin: 10px 0;
 }
 
 .team-intro-description {
   display: flex;
+  align-items: flex-end;
 }
 
 .team-intro-title {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  margin-right: 3px;
 }
 
 .team-intro-main {
+  font-size: 0.7rem;
   vertical-align: bottom;
+}
+
+.team-intro-main-des {
+  display: visible;
+  opacity: 0.7;
+}
+
+.team-arrow-container {
+  display: flex;
+}
+
+.slide-pre {
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.slide-next {
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .team-player-list {
   display: flex;
+  list-style: none; /* list style을 none 으로 하면 번호 매기는 땡땡이는 없어져도, 공간은 남는다 따라서 padding이 남음*/
+  padding: 15px 20px; /* 그래서 list-style none이후에는 padding margin 값이 따라온다*/
+  padding-bottom: 30px;
+  overflow: hidden; /*카드가 넘치기 때문에 히든을 준다 inner에 히든을 주었지만, inner의 패딩 부분이 list보다 넓은데
+  inner에만 히든을 주면 패딩까지는 hidden이 되지 않아서 카드가 넘치게된다*/
+}
+
+.team-player-list a:hover {
+  cursor: pointer;
+}
+
+.team-player-card {
+  width: 180px;
+  height: 280px;
+  margin-right: 30px;
+  border-radius: 7px;
+  transition-property: transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.box-shadow-card-t1 {
+  box-shadow: 5px 5px 5px rgba(228, 0, 43, 0.4);
+}
+
+.box-shadow-card-dk {
+  box-shadow: 5px 5px 5px rgba(14, 199, 181, 0.4);
+}
+
+.team-player-card:hover {
+  transform: scale(110%);
+}
+
+.team-player-content {
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
 .team-player-img img {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 7px 7px 0 0;
 }
 
 .team-player-title {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  align-items: center;
+  font-size: 0.7rem;
   font-weight: 700;
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+
+.team-player-position {
+  font-size: 0.6rem;
+  color: #ffffff;
+  padding: 2px;
+}
+
+.team-player-subtitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden; /* text-overflow: ellipsis; 적용을 위해서는 width, white-space, overflow:hidden필요*/
+  text-overflow: ellipsis;
+}
+
+.team-player-description {
+  font-size: 0.5rem;
+}
+
+.footer-container {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.footer-main span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.footer-main-riot {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.footer-main-riot span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.footer-main-riot img {
+  background-color: #e4002b;
+  border-radius: 3px;
+  height: 18px;
+  width: 23px;
+  margin-right: 5px;
+}
+.footer-main-copyright {
+  padding-top: 40px;
+}
+
+.footer-main-copyright span {
+  font-size: 0.6rem;
+  font-weight: 400;
+  opacity: 0.7;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -218,4 +343,25 @@ section {
   .winner-container {
     display: none;
   }
+  .team-intro-main-des {
+    display: none;
+  }
+}
+
+/*Color*/
+
+.t1-color {
+  color: #e4002b;
+}
+
+.t1-background-color {
+  background-color: #e4002b;
+}
+
+.dk-color {
+  color: #0ec7b5;
+}
+
+.dk-background-color {
+  background-color: #0ec7b5;
 }
